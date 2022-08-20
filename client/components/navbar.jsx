@@ -13,6 +13,7 @@ import {
   CloseButton,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
+import Link from "next/link";
 
 export default function NavBar() {
   const bg = useColorModeValue("primaryColor.50", "gray.800");
@@ -40,17 +41,20 @@ export default function NavBar() {
                 display="flex"
                 alignItems="center"
               >
-                <VisuallyHidden>TransCareer</VisuallyHidden>
+                <VisuallyHidden>Career4All</VisuallyHidden>
               </chakra.a>
-              <chakra.h1
-                variant="ghost"
-                fontSize="xl"
-                fontWeight="medium"
-                ml="2"
-                color={"white"}
-              >
-                TransCareer
-              </chakra.h1>
+              <chakra.a href="/">
+                <chakra.h1
+                  variant="ghost"
+                  fontSize="3xl"
+                  fontWeight="semibold"
+                  ml="2"
+                  color={"white"}
+                  className="underline"
+                >
+                  Career4All
+                </chakra.h1>
+              </chakra.a>
             </Flex>
             <HStack display="flex" alignItems="center" spacing={10}>
               <HStack
@@ -59,16 +63,18 @@ export default function NavBar() {
                 color="brand.500"
                 display={{ base: "none", md: "inline-flex" }}
               >
-                <Button
-                  variant="ghost"
-                  fontSize={"xl"}
-                  _hover={{
-                    bgColor: "#ffffff10",
-                    transition: "all 0.3s ease-in-out",
-                  }}
-                >
-                  Post a job
-                </Button>
+                <Link href={"#feature-section"}>
+                  <Button
+                    variant="ghost"
+                    fontSize={"xl"}
+                    _hover={{
+                      bgColor: "#ffffff10",
+                      transition: "all 0.3s ease-in-out",
+                    }}
+                  >
+                    Features
+                  </Button>
+                </Link>
                 <Button
                   variant="ghost"
                   fontSize={"xl"}
@@ -89,6 +95,16 @@ export default function NavBar() {
                 >
                   Contact
                 </Button>
+                <Button
+                  variant="ghost"
+                  fontSize={"xl"}
+                  _hover={{
+                    bgColor: "#ffffff10",
+                    transition: "all 0.3s ease-in-out",
+                  }}
+                >
+                  Post a job
+                </Button>
               </HStack>
               <Button
                 bgColor="primaryBtn.500"
@@ -107,11 +123,15 @@ export default function NavBar() {
                   display={{ base: "flex", md: "none" }}
                   aria-label="Open menu"
                   fontSize="20px"
-                  color="gray.800"
+                  color="white"
                   _dark={{ color: "inherit" }}
                   variant="ghost"
                   icon={<AiOutlineMenu />}
                   onClick={mobileNav.onOpen}
+                  _hover={{
+                    bgColor: "#ffffff10",
+                    transition: "all 0.3s ease-in-out",
+                  }}
                 />
 
                 <VStack
