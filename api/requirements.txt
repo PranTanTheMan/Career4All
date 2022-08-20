@@ -3,3 +3,6 @@ sqlalchemy-cockroachdb==1.4.3
 psycopg2==2.9.3
 SQLAlchemy-Utils==0.38.3
 google-search-results==2.4.1
+pydantic==1.9.2
+fastapi==0.79.1
+uvicorn==0.18.2
