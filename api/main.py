@@ -53,6 +53,17 @@ def read_jobs(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 """ COMPANY ROUTES """
 
 
+@app.get("/company/name/{company_name}", response_model=CompanySchema)
+def read_company_by_name(company_name: str, db: Session = Depends(get_db)):
+    company = company_handler.get_company_by_name(db, company_name)
+
+    if not company:
+        raise HTTPException(
+            status_code=404, detail=f"There is no company with this name: {company_name}")
+
+    return company
+
+
 @app.post("/company/{company_id}/jobs/", response_model=JobSchema)
 def create_company_job(company_id: int, job: JobCreate, db: Session = Depends(get_db)):
     return company_handler.create_company_job(db, job, company_id)
@@ -64,7 +75,7 @@ def read_company(company_id: int, db: Session = Depends(get_db)):
 
     if not db_company:
         raise HTTPException(
-            status_code=404, detail=f"There is no company with this id {company_id}")
+            status_code=404, detail=f"There is no company with this id: {company_id}")
 
     return db_company
 
