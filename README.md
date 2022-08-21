@@ -5,6 +5,7 @@ Career4All is a web application that provides a service to all including LGBTQ+ 
 
 
 
+
 ## Demo
 
 https://career4all.vercel.app/
@@ -31,6 +32,7 @@ https://career4all.vercel.app/
 **Client:** React, NextJs, ChakraUI, Typescript
 
 **Server:** Python, Docker, CockroachDB, SQL, FastAPI
+![Documentation on API used](https://github.com/PranTanTheMan/Career4All/tree/main/api)
 
 
 ## Screenshots
