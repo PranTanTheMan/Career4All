@@ -1,7 +1,8 @@
+from env import API_KEY
 from serpapi import GoogleSearch
 
 
-def find_jobs(API_KEY: str, position: str, location: str = "NY") -> list:
+def find_job(position: str, location: str = "NY") -> list:
     """
      Searches for a job position in a specify location with the given parameters
      Request is made to the api to get the data for use
