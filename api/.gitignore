@@ -1,4 +1,4 @@
 env.py
 __pycache__
 cockroach-data
-cockroach_credentials.sh
+.postgresql
