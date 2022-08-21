@@ -26,10 +26,7 @@ const theme = extendTheme({
       50: "#04040d",
     },
   },
-  config: {
-    initialColorMode: "dark",
-    useSystemColorMode: true,
-  },
+
   fonts: {
     body: "'Darker Grotesque', sans-serif",
     heading: "'Darker Grotesque', sans-serif",

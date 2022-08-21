@@ -7,24 +7,13 @@ export default function Recruit() {
   return (
     <>
       <Flex
-        _dark={{
-          bg: "#3e3e3e",
-        }}
         p={20}
         w="full"
         justifyContent="center"
         alignItems="center"
         pos="absolute"
       >
-        <Box
-          shadow="xl"
-          _dark={{
-            bg: "gray.800",
-          }}
-          px={20}
-          py={5}
-          mx="auto"
-        >
+        <Box px={20} py={5} mx="auto" id="feature-section" bgColor={"brand.50"}>
           <SimpleGrid
             alignItems="center"
             columns={{
@@ -68,9 +57,6 @@ export default function Recruit() {
                   sm: "left",
                 }}
                 color="gray.600"
-                _dark={{
-                  color: "gray.400",
-                }}
                 fontSize={{
                   md: "xl",
                 }}
@@ -86,9 +72,6 @@ export default function Recruit() {
                   sm: "auto",
                 }}
                 fontSize={"lg"}
-                _dark={{
-                  bg: "gray.700",
-                }}
                 bgColor="transparent"
                 variant="unstyled"
                 _hover={{
@@ -155,9 +138,6 @@ export default function Recruit() {
                   sm: "left",
                 }}
                 color="gray.600"
-                _dark={{
-                  color: "gray.400",
-                }}
                 fontSize={{
                   md: "xl",
                 }}
@@ -173,9 +153,6 @@ export default function Recruit() {
                   sm: "auto",
                 }}
                 fontSize={"lg"}
-                _dark={{
-                  bg: "gray.700",
-                }}
                 bgColor="transparent"
                 variant="unstyled"
                 _hover={{
@@ -234,9 +211,6 @@ export default function Recruit() {
                   sm: "left",
                 }}
                 color="gray.600"
-                _dark={{
-                  color: "gray.400",
-                }}
                 fontSize={{
                   md: "xl",
                 }}
@@ -252,9 +226,6 @@ export default function Recruit() {
                   sm: "auto",
                 }}
                 fontSize={"lg"}
-                _dark={{
-                  bg: "gray.700",
-                }}
                 bgColor="transparent"
                 variant="unstyled"
                 _hover={{

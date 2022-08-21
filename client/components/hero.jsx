@@ -2,11 +2,31 @@ import React from "react";
 import { chakra, Box, Stack } from "@chakra-ui/react";
 import Image from "next/image";
 import CountUp from "react-countup";
-
+import Head from "next/head";
+import AOS from "aos";
+import { useEffect } from "react";
 export default function Hero() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <Box pos="relative" overflow="hidden" borderBottom={"1px solid white"}>
+      <Head>
+        <link
+          href="https://unpkg.com/aos@next/dist/aos.css"
+          rel="stylesheet"
+          key="test"
+        />
+      </Head>
+      <Box
+        pos="relative"
+        overflow="hidden"
+        borderBottom={"1px solid white"}
+        bgColor={"brand.50"}
+        data-aos={"fade-right"}
+        data-aos-duration={"1000"}
+      >
         <Box maxW="7xl" mx="auto">
           <Box
             pos="relative"
@@ -20,6 +40,8 @@ export default function Hero() {
             w="full"
             mb={{ base: 8, sm: 16, md: 20, lg: 28, xl: 32 }}
             border="solid 1px transparent"
+            bgColor={"brand.50"}
+            data-aos="fade-right"
           >
             <Box
               maxW={{
@@ -39,6 +61,7 @@ export default function Hero() {
               display={"flex"}
               flexDirection={{ base: "column", md: "row" }}
               alignItems={"center"}
+              bgColor={"brand.50"}
             >
               <Box
                 textAlign="center"
@@ -49,6 +72,7 @@ export default function Hero() {
                 }}
                 mx="auto"
                 mr={14}
+                bgColor={"brand.50"}
               >
                 <chakra.h1
                   fontSize={{
@@ -60,19 +84,16 @@ export default function Hero() {
                   lineHeight="short"
                   fontWeight="extrabold"
                   color="gray.900"
-                  _dark={{
-                    color: "white",
-                  }}
+                  bgColor={"brand.50"}
+                  data-aos="fade-right"
                 >
                   <chakra.span
                     display={{
                       base: "block",
                       xl: "inline",
                     }}
-                    color="brand.100"
-                    _dark={{
-                      color: "brand.400",
-                    }}
+                    color="brand.200"
+                    bgColor={"brand.50"}
                   >
                     Career4
                   </chakra.span>
@@ -82,9 +103,7 @@ export default function Hero() {
                       xl: "inline",
                     }}
                     color="primaryBtn.500"
-                    _dark={{
-                      color: "brand.400",
-                    }}
+                    bgColor={"brand.50"}
                   >
                     All
                   </chakra.span>
@@ -104,13 +123,20 @@ export default function Hero() {
                     base: "xl",
                     md: "2xl",
                   }}
-                  color="gray.500"
+                  color="gray.700"
                   lineHeight="base"
+                  data-aos="fade-right"
                 >
                   With true Gender equity, the best career options, and a global
                   network of over{" "}
-                  <CountUp start={0} duration={3} end={1000} easingFn />
-                  career options, you can start your career with confidence.
+                  <CountUp
+                    start={0}
+                    duration={3}
+                    end={100}
+                    easingFn
+                    className="gradient"
+                  />
+                  + career options, you can start your career with confidence.
                 </chakra.p>
                 <Stack
                   direction={{
@@ -127,6 +153,7 @@ export default function Hero() {
                     md: 2,
                   }}
                   justifyContent="center"
+                  bgColor={"brand.50"}
                 >
                   <Box rounded="full" shadow="md">
                     <chakra.a
@@ -155,13 +182,19 @@ export default function Hero() {
                       }}
                       cursor="pointer"
                       transition={["all", "ease-in-out", "0.2s"]}
+                      href="/jobs"
                     >
                       Get started
                     </chakra.a>
                   </Box>
                 </Stack>
               </Box>
-              <Image src={"/heroSVG.svg"} width={"600px"} height={"600px"} />
+              <Image
+                src={"/heroSVG.svg"}
+                width={"600px"}
+                height={"600px"}
+                className="hero-image"
+              />
             </Box>
           </Box>
         </Box>
