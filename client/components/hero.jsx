@@ -1,6 +1,7 @@
 import React from "react";
 import { chakra, Box, Stack } from "@chakra-ui/react";
 import Image from "next/image";
+import CountUp from "react-countup";
 
 export default function Hero() {
   return (
@@ -73,7 +74,7 @@ export default function Hero() {
                       color: "brand.400",
                     }}
                   >
-                    Trans
+                    Career4
                   </chakra.span>
                   <chakra.span
                     display={{
@@ -85,7 +86,7 @@ export default function Hero() {
                       color: "brand.400",
                     }}
                   >
-                    Career
+                    All
                   </chakra.span>
                 </chakra.h1>
                 <chakra.p
@@ -107,8 +108,9 @@ export default function Hero() {
                   lineHeight="base"
                 >
                   With true Gender equity, the best career options, and a global
-                  network of over 1,000 career options, you can start your
-                  career with confidence.
+                  network of over{" "}
+                  <CountUp start={0} duration={3} end={1000} easingFn />
+                  career options, you can start your career with confidence.
                 </chakra.p>
                 <Stack
                   direction={{
