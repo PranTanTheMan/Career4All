@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from libs.models.job_model import JobModel
+from sqlalchemy import func
 
 
 class JobController:
@@ -9,7 +10,7 @@ class JobController:
         keyword: Keyword to look for in the column of keywords
         return: Returns the results that match the keyword
         """
-        return db.query(JobModel).filter(JobModel.keywords.contains(keyword)).all()
+        return db.query(JobModel).filter(func.lower(JobModel.keywords).contains(func.lower(keyword))).all()
 
     def get_jobs(self, db: Session, skip: int = 0, limit: int = 100):
         """ Gets all jobs in the database
